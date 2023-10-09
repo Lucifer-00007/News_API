@@ -6,6 +6,13 @@ const port = process.env.PORT || 3000; // Update port to use environment variabl
 
 app.use(cors());
 
+app.get('/', async (req, res) => {
+  res.status(200).json({
+    status: true,
+    msg: "API is working. Now try /news with your query and api-key"
+  })
+});
+
 // Define a new endpoint that accepts query parameters
 app.get('/news', async (req, res) => {
   try {
